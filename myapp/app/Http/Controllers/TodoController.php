@@ -17,6 +17,8 @@ class TodoController extends Controller
         $items = DB::table('todo')->get();
         return view('index',['items'=>$items]);
         //
+        
+         /*return view('/index');*/
     }
 
     /**
