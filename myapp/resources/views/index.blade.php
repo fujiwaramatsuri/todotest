@@ -1,7 +1,10 @@
-<html lang="ja"><head>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>COACHTECH</title>
   <style>
     html,
@@ -301,80 +304,30 @@
 </head>
 
 <body>
+
   <div class="container">
     <div class="card">
       <p class="title mb-15">Todo List</p>
             <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
-          <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">          <input type="text" class="input-add" name="content">
+@csrf
+        <input type="hidden" name="_token" value="C833K1b9KNDsH3DsfIoZejefVdZH75wLVmtjr4BW">
+          <input type="text" class="input-add" name="content">
           <input class="button-add" type="submit" value="追加">
         </form>
         <table>
-          <tbody><tr>
-            <th>作成日</th>
-            <th>タスク名</th>
-            <th>更新</th>
-            <th>削除</th>
-          </tr>
-                    <tr>
-            <td>
-              2022-02-03 10:25:22
-            </td>
-            <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=16844" method="post"></form>
-              <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">              <td>
-                <input type="text" class="input-update" value="larael" name="content">
-              </td>
-              <td>
-                <button class="button-update">更新</button>
-              </td>
-            
-            <td>
-              <form action="http://young-woodland-12937.herokuapp.com/todo/delete?id=16844" method="post">
-                <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">                <button class="button-delete">削除</button>
-              </form>
-            </td>
-          </tr>
-                    <tr>
-            <td>
-              2022-02-04 11:30:35
-            </td>
-            <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=16854" method="post"></form>
-              <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">              <td>
-                <input type="text" class="input-update" value="test" name="content">
-              </td>
-              <td>
-                <button class="button-update">更新</button>
-              </td>
-            
-            <td>
-              <form action="http://young-woodland-12937.herokuapp.com/todo/delete?id=16854" method="post">
-                <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">                <button class="button-delete">削除</button>
-              </form>
-            </td>
-          </tr>
-                    <tr>
-            <td>
-              2022-02-06 03:56:51
-            </td>
-            <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=16864" method="post"></form>
-              <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">              <td>
-                <input type="text" class="input-update" value="aiuep" name="content">
-              </td>
-              <td>
-                <button class="button-update">更新</button>
-              </td>
-            
-            <td>
-              <form action="http://young-woodland-12937.herokuapp.com/todo/delete?id=16864" method="post">
-                <input type="hidden" name="_token" value="0Rb7WyTpe5FjXrg076ohbhUoRVhmp2Fv8ZJK9s0H">                <button class="button-delete">削除</button>
-              </form>
-            </td>
-          </tr>
-                  </tbody></table>
+          <tbody>
+            <tr>
+              <th>作成日</th>
+              <th>タスク名</th>
+              <th>更新</th>
+              <th>削除</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
   
-
-
-</body></html>
+</body>
+</html>
