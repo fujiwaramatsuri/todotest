@@ -13,7 +13,7 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index()/*index表記*/
     {
         $items = DB::table('todo')->get();
         return view('index',['items'=>$items]);
@@ -29,7 +29,9 @@ class TodoController extends Controller
      */
     public function create(Request $request)
     {
+        dd($request);
         $param = [
+            'id' => $request->id,
             'content' => $request->content,
             'timestamp' => $request->timestamp,
         ];
