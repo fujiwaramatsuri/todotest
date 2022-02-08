@@ -29,16 +29,18 @@ class TodoController extends Controller
      */
     public function create(Request $request)
     {
-        dd($request);
         $param = [
-            'id' => $request->id,
             'content' => $request->content,
-            'timestamp' => $request->timestamp,
         ];
         //
         
         DB::table('todo')->insert($param);
         return redirect('/');
+        $validate_rule = [
+            'content' =>'required',
+        ];
+        //
+        $this->validate($request, $validate_rule);
     }
 
     /**
@@ -47,9 +49,9 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function post(Request $request)
     {
-        //
+      
     }
 
     /**
