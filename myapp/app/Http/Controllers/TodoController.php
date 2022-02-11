@@ -35,12 +35,13 @@ class TodoController extends Controller
         //
         
         DB::table('todo')->insert($param);
-        return redirect('/index');
+        return redirect('/');
         $validate_rule = [
             'content' =>'required',
         ];
         //
         $this->validate($request, $validate_rule);
+        return redirect('/');
     }
 
     /**
