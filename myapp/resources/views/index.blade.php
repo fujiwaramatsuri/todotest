@@ -311,7 +311,7 @@
             <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
 @csrf
-        <input type="hidden" name="_token" value="C833K1b9KNDsH3DsfIoZejefVdZH75wLVmtjr4BW">
+        <input type="hidden" name="" value="C833K1b9KNDsH3DsfIoZejefVdZH75wLVmtjr4BW">
           <input type="text" class="input-add" name="content">
           <input class="button-add" type="submit" value="追加">
         </form>
@@ -325,9 +325,13 @@
             </tr>
           </tbody>
         </table>
+        @section('content')
+        <from action="/todo/create" method="/post" class="flex between mb-30">
+          <input type=
+          @endsection
+
       </div>
     </div>
   </div>
-  
 </body>
 </html>
