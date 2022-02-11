@@ -9,4 +9,12 @@ class Todo extends Model
 {
     use HasFactory;
     protected $guarded = array('id');
+    public static $rules = array(
+    'content'=>'required'
+    );
+}
+public function getDetail()
+{
+    $txt = 'content:'.$this->content;
+    return $txt;
 }
