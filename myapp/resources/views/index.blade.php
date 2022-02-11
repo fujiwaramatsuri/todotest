@@ -326,8 +326,15 @@
           </tbody>
         </table>
         @section('content')
+        <table>
+          <tr>
+
         <from action="/todo/create" method="/post" class="flex between mb-30">
-          <input type=
+          <input type="text" classs="input-add" name="content">
+          <input class="button-add" type="submit" value="更新">
+          <input class="button-add" type="submit" value="削除">
+  </tr>
+  </table>
           @endsection
 
       </div>
