@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
 {
@@ -35,7 +35,7 @@ class TodoController extends Controller
         //
         
         DB::table('todo')->insert($param);
-        return redirect('/');
+        return redirect('/index');
         $validate_rule = [
             'content' =>'required',
         ];
