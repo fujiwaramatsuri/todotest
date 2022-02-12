@@ -328,10 +328,10 @@
         
 @foreach($items as $item)
 <table>
-{{$item}}
+{{$item->content}}
 <td>
-        <button>更新</button>
-        <button>削除</button>
+<input class="button-add" type="submit" value="更新">
+<input class="button-add" type="submit" value="削除">
       </td>
   </table>
 </form>
