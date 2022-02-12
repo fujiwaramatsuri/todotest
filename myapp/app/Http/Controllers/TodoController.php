@@ -42,7 +42,7 @@ class TodoController extends Controller
         //
         $this->validate($request, $validate_rule);
         $from =$request->all();
-        TODO::create($from);
+        TODO::create($form);
         return redirect('/');
     }
 
@@ -52,9 +52,10 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function post(Request $request)
+    public function delete(Request $request)
     {
-      
+      $todo = Todo::find($request->id);
+      return view('delete',[form => $todo]);
     }
 
     /**
@@ -63,8 +64,9 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function show(Todo $todo)
-    {
+    public function remove(Request $request)
+    {Todo::find($request->id)->delete();
+        return redirect('/');
         //
     }
 
