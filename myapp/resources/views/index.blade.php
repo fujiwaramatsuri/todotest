@@ -326,7 +326,7 @@
           </tbody>
         </table>
         
-@foreach(todos->$all() as $item)
+@foreach($items as $item)
 <table>
 {{$item}}
 <td>
