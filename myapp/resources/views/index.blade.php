@@ -326,20 +326,16 @@
           </tbody>
         </table>
         
-@section('content')
+@foreach(todos->$all() as $item)
+<table>
+{{$item}}
 <td>
-        <input type="text" class="input-add" name="content">
-      </td>
-    </tr>
-    <tr>
-      <th></th>
-      <td>
         <button>更新</button>
         <button>削除</button>
       </td>
   </table>
 </form>
-@endsection
+@endforeach
       </div>
     </div>
   </div>
