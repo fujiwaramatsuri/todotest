@@ -12,9 +12,10 @@ class Todo extends Model
     public static $rules = array(
     'content'=>'required'
     );
-}
+
 public function getDetail()
 {
     $txt = 'content:'.$this->content;
     return $txt;
+}
 }
