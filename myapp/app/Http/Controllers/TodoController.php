@@ -41,6 +41,8 @@ class TodoController extends Controller
         ];
         //
         $this->validate($request, $validate_rule);
+        $from =$request->all();
+        TODO::create($from);
         return redirect('/');
     }
 
