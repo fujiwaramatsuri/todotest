@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Todo;
+use App\Models\Todos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +15,7 @@ class TodoController extends Controller
      */
     public function index()/*index表記*/
     {
-        $items = DB::table('todo')->get();
+        $items = DB::table('todos')->get();
         return view('index',['items'=>$items]);
         //
         
@@ -34,7 +34,7 @@ class TodoController extends Controller
         ];
         //
         
-        DB::table('todo')->insert($param);
+        DB::table('todos')->insert($param);
         return redirect('/');
         $validate_rule = [
             'content' =>'required',
@@ -54,8 +54,8 @@ class TodoController extends Controller
      */
     public function delete(Request $request)
     {
-      $todo = Todo::find($request->id);
-      return view('delete',[form => $todo]);
+      $todos = Todos::find($request->id);
+      return view('delete',[form => $todos]);
     }
     /**
      * Display the specified resource.
@@ -64,7 +64,7 @@ class TodoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function remove(Request $request)
-    {Todo::find($request->id)->delete();
+    {Todos::find($request->id)->delete();
         return redirect('/');
         //
     }
@@ -72,10 +72,10 @@ class TodoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Todo  $todo
+     * @param  \App\Models\Todos  $todos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Todo $todo)
+    public function edit(Todos $todos)
     {
         //
     }
@@ -84,28 +84,28 @@ class TodoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Todo  $todo
+     * @param  \App\Models\Todos  $todos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(Request $request, Todos $todos)
     {
-        $param = [
+        $$param = [
             'id' => $request->id,
             'content' => $request->content,
             'timestamp' => $request->timestamp,
         ];
         //
-        DB::table('todo')->where('id',$request->id)->update($param);
+        DB::table('todos')->where('id',$request->id)->update($param);
         return redirect('/');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Todo  $todo
+     * @param  \App\Models\Todos  $todos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function destroy(Todos $todos)
     {
         //
     }
