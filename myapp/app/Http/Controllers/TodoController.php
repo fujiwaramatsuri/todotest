@@ -57,7 +57,6 @@ class TodoController extends Controller
       $todo = Todo::find($request->id);
       return view('delete',[form => $todo]);
     }
-
     /**
      * Display the specified resource.
      *
