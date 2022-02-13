@@ -56,6 +56,7 @@ class TodoController extends Controller
     {
       $todos = Todos::find($request->id);
       return view('delete',[form => $todos]);
+      return redirect('/');
     }
     /**
      * Display the specified resource.
@@ -97,6 +98,10 @@ class TodoController extends Controller
         //
         DB::table('todos')->where('id',$request->id)->update($param);
         return redirect('/');
+        $validate_rule = [
+            'content' =>'required',
+        ];
+        //
     }
 
     /**
