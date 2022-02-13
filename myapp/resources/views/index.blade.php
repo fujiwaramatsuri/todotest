@@ -327,10 +327,16 @@
         </table>
         
 @foreach($items as $item)
-<table>
-{{$item->content}}
-<td>
+<form action="" method="post">
+		<div>
+      <table>
+			<p><input type="text" id="content" name="content" value="{{$item->content}}"></p>
+			<input type="hidden" id="id" name="id" value="{{$item->content}}">
+		</div>
+ <td>
+  <form action="/todo/update" method="post" class="flex between mb-30">
 <input class="button-add" type="submit" value="更新">
+<form action="/todo/delete" method="post" class="flex between mb-30">
 <input class="button-add" type="submit" value="削除">
       </td>
   </table>
