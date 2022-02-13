@@ -330,14 +330,21 @@
 <form action="" method="post">
 		<div>
       <table>
+        <td>
+          <th>
 			<p><input type="text" id="content" name="content" value="{{$item->content}}"></p>
 			<input type="hidden" id="id" name="id" value="{{$item->content}}">
-		</div>
- <td>
+  </th>
+  <th>
   <form action="/todo/update" method="post" class="flex between mb-30">
 <input class="button-add" type="submit" value="更新">
+  </form>
+</th>
+  <th>
 <form action="/todo/delete" method="post" class="flex between mb-30">
 <input class="button-add" type="submit" value="削除">
+  </form>
+  </th>
       </td>
   </table>
 </form>
