@@ -95,17 +95,25 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todos $todos)
     {
-        $$param = [
+    $todo = Todos::where($request->id);
+          $param = [
             'id' => $request->id,
             'content' => $request->content,
-            'timestamp' => $request->timestamp,
+            // 'timestamp' => $request->timestamp,
         ];
+         dd($param);
         //
         DB::table('todos')->where('id',$request->id)->update($param);
         return redirect('/');
         $validate_rule = [
             'content' =>'required',
+            'id' =>'required',
         ];
+        //
+        $this->validate($request, $validate_rule);
+        $from =$request->all();
+        TODO::update($form);
+        return redirect('/');
         //
     }
 
