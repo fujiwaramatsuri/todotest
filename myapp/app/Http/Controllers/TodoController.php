@@ -15,7 +15,9 @@ class TodoController extends Controller
      */
     public function index()/*index表記*/
     {
+        
         $items = DB::table('todos')->get();
+        // dd($items);
         return view('index',['items'=>$items]);
         //
         
@@ -31,6 +33,7 @@ class TodoController extends Controller
     {
         $param = [
             'content' => $request->content,
+            //  'timestamp' => $request->timestamp,
         ];
         //
         
@@ -54,8 +57,10 @@ class TodoController extends Controller
      */
     public function delete(Request $request)
     {
-      $todos = Todos::find($request->id);
-      return view('delete',[form => $todos]);
+        // dd($request->id);
+      $todo = Todos::find($request->id);
+      $todo->delete();
+    //   return view('delete',[form => $todos]);
       return redirect('/');
     }
     /**
