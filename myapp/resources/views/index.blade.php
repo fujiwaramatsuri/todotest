@@ -329,7 +329,11 @@
 @foreach($items as $item)
 		<div>
       <table>
+        
         <td>
+          <th>
+            <input type="text" id="timestamp" name="timestamp" value="{{$item->content}}">
+          </th>
           <th>
 			        <p>
               <input type="text" id="content" name="content" value="{{$item->content}}">
@@ -345,7 +349,7 @@
           <th>
           <form action="/todo/delete" method="post" class="flex between mb-30">
     @csrf
-<p> {{$item}}</p>
+　　　　　　　<input type="hidden" name="id" value="{{$item->id}}">
           <input class="button-add" type="submit" value="削除">
           </form>
            </th>
