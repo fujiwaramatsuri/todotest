@@ -331,18 +331,22 @@
       <table>
         
         <td>
-          <th>
-            <input type="text" id="timestamp" name="timestamp" value="{{$item->content}}">
-          </th>
+          
           <th>
 			        <p>
-              <input type="text" id="content" name="content" value="{{$item->content}}">
+              <input type="hidden" id="content" name="content" value="{{$item->id}}">
               </p>
-			          <input type="hidden" id="id" name="id" value="{{$item->content}}">
+			          <input type="hidden" id="content" name="content" value="{{$item->content}}">
           </th>
           <th>
-          <form action="/todo/update" method="post" class="flex between mb-30">
+          <form action="/todo/update" method="post" class="flex between mb-30"　value="{{$item->id}}">
     @csrf
+    <p>
+          <input type="text" id="content" name="content" value="{{$item->content}}">
+  </p>
+          <input type="hidden" id="id" name="id" value="{{$item->id}}">
+  </th><th>
+    <input type="text" name="content" >
           <input class="button-add" type="submit" value="更新">
           </form>
           </th>
