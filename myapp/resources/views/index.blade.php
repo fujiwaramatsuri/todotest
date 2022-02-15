@@ -331,32 +331,32 @@
       <table>
         
         <td>
-          
-          <th>
+            {{$item->created_at}}
+        </td>
+          <td>
 			        <p>
               <input type="hidden" id="content" name="content" value="{{$item->id}}">
               </p>
 			          <input type="hidden" id="content" name="content" value="{{$item->content}}">
-          </th>
-          <th>
-          <form action="/todo/update" method="post" class="flex between mb-30"　value="{{$item->id}}">
+          </td>
+          <td>
+            <form action="/todo/update" method="post" class="flex between mb-30"　value="{{$item->id}}">
+
     @csrf
-    <p>
-          <input type="text" id="content" name="content" value="{{$item->content}}">
-  </p>
-          <input type="hidden" id="id" name="id" value="{{$item->id}}">
-  </th><th>
-    <input type="text" name="content" >
-          <input class="button-add" type="submit" value="更新">
+            <input type="hidden" id="id" name="id" value="{{$item->id}}">
+          </td>
+          <td>
+            <input type="text" name="content" value="{{$item->content}}">
+            <input class="button-add" type="submit" value="更新">
           </form>
-          </th>
-          <th>
+          </td>
+          <td>
           <form action="/todo/delete" method="post" class="flex between mb-30">
     @csrf
-　　　　　　　<input type="hidden" name="id" value="{{$item->id}}">
+            <input type="hidden" name="id" value="{{$item->id}}">
           <input class="button-add" type="submit" value="削除">
           </form>
-           </th>
+           </td>
         </td>
   </table>
 </form>
