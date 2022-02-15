@@ -232,7 +232,7 @@
     }
 
     .input-update {
-      width: 90%;
+      width: 70%;
       padding: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
@@ -300,6 +300,10 @@
       border-color: #71fadc;
       color: #fff;
     }
+    .at{
+      width: 25%;
+    }
+    /* * {border:1px solid red !important;} */
   </style>
 </head>
 
@@ -330,8 +334,8 @@
 		<div>
       <table>
         
-        <td>
-            {{$item->created_at}}
+        <td class="at">
+          <p>{{$item->created_at}}</p>
         </td>
           <td>
 			        <p>
@@ -346,15 +350,15 @@
             <input type="hidden" id="id" name="id" value="{{$item->id}}">
           </td>
           <td>
-            <input type="text" name="content" value="{{$item->content}}">
-            <input class="button-add" type="submit" value="更新">
+            <input type="text" class="input-update" name="content" value="{{$item->content}}">
+            <input class="button-update" type="submit" value="更新">
           </form>
           </td>
           <td>
           <form action="/todo/delete" method="post" class="flex between mb-30">
     @csrf
             <input type="hidden" name="id" value="{{$item->id}}">
-          <input class="button-add" type="submit" value="削除">
+          <input class="button-delete" type="submit" value="削除">
           </form>
            </td>
         </td>
