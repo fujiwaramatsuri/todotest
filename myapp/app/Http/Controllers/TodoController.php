@@ -101,7 +101,7 @@ class TodoController extends Controller
             'content' => $request->content,
             // 'timestamp' => $request->timestamp,
         ];
-         dd($param);
+        //  dd($param);
         //
         DB::table('todos')->where('id',$request->id)->update($param);
         return redirect('/');
